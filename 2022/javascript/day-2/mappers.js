@@ -1,0 +1,46 @@
+const mapMoves = {
+  'X': 'A',
+  'Y': 'B',
+  'Z': 'C',
+}
+
+const ownMoveScore = {
+  'A': 1,
+  'B': 2,
+  'C': 3,
+}
+
+const gameScore = {
+  'A': {
+    'B': 6,
+    'C': 0,
+  },
+  'B': {
+    'A': 0,
+    'C': 6,
+  },
+  'C': {
+    'A': 6,
+    'B': 0,
+  }
+}
+
+const outcomeMapping = {
+  'A': {
+    'A': 'C',
+    'B': 'A',
+    'C': 'B',
+  },
+  'C': {
+    'A': 'B',
+    'B': 'C',
+    'C': 'A',
+  },
+}
+
+module.exports = {
+  mapMoves,
+  ownMoveScore,
+  gameScore,
+  outcomeMapping,
+}
