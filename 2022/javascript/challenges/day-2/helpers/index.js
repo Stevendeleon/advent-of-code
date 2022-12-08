@@ -38,9 +38,19 @@ const outcomeMapping = {
   },
 }
 
+function sumUpPoints (input) {
+  return input.reduce((sum, move) => {
+    const pointsForSelection = ownMoveScore[move.b];
+    const pointsForResult = move.a === move.b ? 3 : gameScore[move.a][move.b];
+
+    return sum + pointsForSelection + pointsForResult;
+  }, 0);
+}
+
 module.exports = {
   mapMoves,
   ownMoveScore,
   gameScore,
   outcomeMapping,
+  sumUpPoints,
 }

@@ -1,6 +1,5 @@
-// imports
-const { mapMoves, ownMoveScore, gameScore, outcomeMapping } = require('./mappers');
-const readInput = require('../readInput');
+const { mapMoves, outcomeMapping, sumUpPoints } = require('./helpers');
+const readInput = require('../../utils/io');
 
 const inputPartOne = readInput('./input.txt', 'utf-8')
   .split('\r\n')
@@ -11,15 +10,6 @@ const inputPartOne = readInput('./input.txt', 'utf-8')
       b: mapMoves[line.split(' ')[1]],
     }
   });
-
-function sumUpPoints (input) {
-  return input.reduce((sum, move) => {
-    const pointsForSelection = ownMoveScore[move.b];
-    const pointsForResult = move.a === move.b ? 3 : gameScore[move.a][move.b];
-
-    return sum + pointsForSelection + pointsForResult;
-  }, 0);
-}
 
 const inputPartTwo = inputPartOne
   .map(move => {
