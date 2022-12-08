@@ -1,6 +1,6 @@
-const readFile = require('../../../utils/io');
+const readFile = require('../../utils/io');
 
-const input = readFile('../input.txt', 'utf-8')
+const input = readFile('./input.txt', 'utf-8')
   .split('\r\n\r\n')
   .map(line => {
     return line.split('\r\n')
