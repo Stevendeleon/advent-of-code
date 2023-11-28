@@ -1,3 +1,3 @@
-module github.com/stevendeleon/advent-of-code
+module github.com/Stevendeleon/advent-of-code
 
 go 1.21.4
