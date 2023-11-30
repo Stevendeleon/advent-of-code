@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
 function readFile(path) {
-  return fs.readFileSync(path, 'utf8');
+  return fs.readFileSync(path, "utf8");
 }
 
 module.exports = readFile;

@@ -1,15 +1,15 @@
-const readFile = require('../../utils/io');
+const readFile = require("../../utils/io");
 
-const input = readFile('./input.txt', 'utf-8')
-  .split('\r\n\r\n')
-  .map(line => {
-    return line.split('\r\n')
+const input = readFile("./input.txt", "utf-8")
+  .split("\r\n\r\n")
+  .map((line) => {
+    return line.split("\r\n");
   })
-  .map(arr => {
+  .map((arr) => {
     return arr
-      .filter(x => !!x)
-      .map(n => parseInt(n))
-  })
+      .filter((x) => !!x)
+      .map((n) => parseInt(n));
+  });
 
 function partOne() {
   let total = 0;
@@ -23,11 +23,11 @@ function partOne() {
     }
   }
 
-  console.log('Part 1:', total);
+  console.log("Part 1:", total);
 }
 
 function partTwo() {
-  let total = []
+  let total = [];
 
   for (let i = 0; i < input.length; i++) {
     const arr = input[i];
@@ -38,9 +38,9 @@ function partTwo() {
 
   total.sort((a, b) => b - a);
 
-  let topThree = total[0] + total[1] + total[2]
+  let topThree = total[0] + total[1] + total[2];
 
-  console.log('Part 2:', topThree);
+  console.log("Part 2:", topThree);
 }
 function findSumOfArray(arr) {
   let sum = 0;
@@ -53,4 +53,3 @@ function findSumOfArray(arr) {
 
 partOne();
 partTwo();
-

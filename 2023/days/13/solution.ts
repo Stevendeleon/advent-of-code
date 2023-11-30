@@ -1,16 +1,3 @@
-#!/bin/bash
-
-echo "Scaffolding 2023 for Deno"
-
-mkdir days
-cd days
-
-for i in {01..25}
-do
-  mkdir $i
-  touch $i/input.txt
-
-  cat <<EOF >$i/solution.ts
 async function partOne(){
   const data = await Deno.readTextFile("./input.txt");
   return;
@@ -26,6 +13,3 @@ const p2 = await partTwo();
 
 console.log('Part One:', p1);
 console.log('Part Two:', p2);
-EOF
-
-done

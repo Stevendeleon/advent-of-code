@@ -20,8 +20,7 @@ function splitArrayAfterNValues(array, len) {
   return result;
 }
 
-
 module.exports = {
   getSumOfArray,
-  splitArrayAfterNValues
-}
+  splitArrayAfterNValues,
+};
